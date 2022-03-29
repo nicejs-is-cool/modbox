@@ -63,6 +63,12 @@ export default class rmtrollbox extends Mod {
     public GetElement(uielement: UIElement) {
         return document.querySelector(`#trollbox > ${uielement.GetSelector()}`);
     }
+    public OpenPopup(html: string) {
+        return new Promise(resolve => {
+            //@ts-ignore
+            window.popup(html,resolve); // resolve gets called when the popup is open
+        })
+    }
 }
 class UIElement {
     private _children: UIElement[] = [];
