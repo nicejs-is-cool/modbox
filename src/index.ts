@@ -1,4 +1,4 @@
-import { ModAPI, Mod } from "./modapi";
+import { ModAPI, Mod, ModAPI_C } from "./modapi";
 import MBLogger from "./mblogger";
 import rmtrollbox from "./rmtrollbox";
 import ModStorage from "./modstorage";
@@ -60,4 +60,4 @@ ModAPI.LoadMod(ModStorage);
 ModAPI.LoadMod(LoaderMod);
 ModAPI.LoadMod(ModLoader);
 
-export { Mod, ModAPI };
+export { Mod, ModAPI, ModAPI_C };

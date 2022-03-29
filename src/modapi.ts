@@ -9,7 +9,7 @@ export class Mod {
     public namespace: string = "mod";
     init() {}
 }
-class ModAPI_C extends Mod {
+export class ModAPI_C extends Mod {
     public name: string = "ModAPI";
     public description: string = "A API for rmtrollbox mods";
     public version: string = "0.0.1";
