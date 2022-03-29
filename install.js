@@ -2,7 +2,7 @@ localStorage.uncatwrongboot = "$loader.script('https://nicejs-is-cool.github.io/
 window.printMsg({
     nick: 'modbox',
     color: 'blue',
-    home: '',
+    home: 'amogus',
     style: '',
     msg: 'Installation successful! Reloading now...',
     date: Date.now()
