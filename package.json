@@ -11,7 +11,8 @@
   },
   "scripts": {
     "build": "webpack --mode=production",
-    "dev": "webpack --mode=development"
+    "dev": "webpack --mode=development",
+    "gendocs": "typedoc ./src/index.ts"
   },
   "dependencies": {
     "localforage": "^1.10.0"
