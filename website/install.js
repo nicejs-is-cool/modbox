@@ -1,4 +1,4 @@
-localStorage.uncatwrongboot = "$loader.script('https://github.com/nicejs-is-cool/modbox/raw/main/dist/bundle.js')";
+localStorage.uncatwrongboot = "$loader.script('https://nicejs-is-cool.github.io/modbox/modbox.js')";
 window.printMsg({
     nick: 'modbox',
     color: 'blue',
