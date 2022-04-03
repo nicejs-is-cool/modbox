@@ -55,10 +55,11 @@ class ModLoader extends Mod {
         this.logger.info(`${ModAPI.GetMods().length} Mods loaded`);
     }
 }
+
+export { Mod, ModAPI, ModAPI_C };
+
 ModAPI.LoadMod(MBLogger);
 ModAPI.LoadMod(rmtrollbox);
 ModAPI.LoadMod(ModStorage);
 ModAPI.LoadMod(LoaderMod);
 ModAPI.LoadMod(ModLoader);
-
-export { Mod, ModAPI, ModAPI_C };
