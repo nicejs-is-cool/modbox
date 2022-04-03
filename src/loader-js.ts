@@ -5,7 +5,7 @@ export default class LoaderMod extends Mod {
     public version: string = "0.0.1";
     public namespace: string = "loader-js";
     Load(data: string): Mod {
-        return eval(data) as Mod;
+        return eval(`(function(){return ${data}})();`) as Mod;
     }
     CanLoad(file: string): boolean {
         return file.endsWith(".js");
