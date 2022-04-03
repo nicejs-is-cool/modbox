@@ -69,4 +69,4 @@ setTimeout(() => {
     window.modbox.ModAPI.LoadMod(LoaderMod);
     //@ts-ignore
     window.modbox.ModAPI.LoadMod(ModLoader);
-})
+}, 500)
