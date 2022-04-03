@@ -34,12 +34,13 @@ class ModLoader extends Mod {
             modList.splice(index, 1);
         }
         for (let i = 0; i < mods.List().length; i++) {
-            let mod = mods.Get(mods.List()[i])
+            let modName = mods.List()[i]
+            let mod = mods.Get(modName)
             this.logger.info(`Loading ${mod}`);
             let loaders = ModAPI.FilterMods<LoaderMod>("loader-");
             let loaded = false;
             for (let loader of loaders) {
-                if (loader.CanLoad(mod)) {
+                if (loader.CanLoad(modName)) {
                     this.logger.info(`Loading mod ${mod} with loader ${loader.name}`);
                     ModAPI.LoadMod(loader.Load(mod));
                     this.logger.info(`Loaded ${mod}`);
@@ -48,7 +49,7 @@ class ModLoader extends Mod {
                 }
             }
             if (!loaded) {
-                this.logger.error(`Could not load mod ${mod}: no loader found for it`);
+                this.logger.error(`Could not load mod ${modName}: no loader found for it`);
             }
         }
         this.logger.info(`${ModAPI.GetMods().length} Mods loaded`);
