@@ -58,8 +58,15 @@ class ModLoader extends Mod {
 
 export { Mod, ModAPI, ModAPI_C };
 
-ModAPI.LoadMod(MBLogger);
-ModAPI.LoadMod(rmtrollbox);
-ModAPI.LoadMod(ModStorage);
-ModAPI.LoadMod(LoaderMod);
-ModAPI.LoadMod(ModLoader);
+setTimeout(() => {
+    //@ts-ignore
+    window.modbox.ModAPI.LoadMod(MBLogger);
+    //@ts-ignore
+    window.modbox.ModAPI.LoadMod(rmtrollbox);
+    //@ts-ignore
+    window.modbox.ModAPI.LoadMod(ModStorage);
+    //@ts-ignore
+    window.modbox.ModAPI.LoadMod(LoaderMod);
+    //@ts-ignore
+    window.modbox.ModAPI.LoadMod(ModLoader);
+})
