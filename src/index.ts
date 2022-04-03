@@ -41,9 +41,9 @@ class ModLoader extends Mod {
             let loaded = false;
             for (let loader of loaders) {
                 if (loader.CanLoad(modName)) {
-                    this.logger.info(`Loading mod ${mod} with loader ${loader.name}`);
+                    this.logger.info(`Loading mod ${modName} with loader ${loader.name}`);
                     ModAPI.LoadMod(loader.Load(mod));
-                    this.logger.info(`Loaded ${mod}`);
+                    this.logger.info(`Loaded ${modName}`);
                     loaded = true;
                     break;
                 }
