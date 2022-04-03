@@ -36,7 +36,7 @@ class ModLoader extends Mod {
         for (let i = 0; i < mods.List().length; i++) {
             let modName = mods.List()[i]
             let mod = mods.Get(modName)
-            this.logger.info(`Loading ${mod}`);
+            this.logger.info(`Loading ${modName}`);
             let loaders = ModAPI.FilterMods<LoaderMod>("loader-");
             let loaded = false;
             for (let loader of loaders) {
