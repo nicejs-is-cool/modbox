@@ -20,19 +20,7 @@ class ModLoader extends Mod {
         this.logger.info('Loading mods...');
         let mods = ModAPI.GetMod<ModStorage>("storage").GetStorage("mods")
         let modList = mods.List();
-        let modText = modList.map(x => mods.Get(x));
-        let priorityMods: number[] = [];
-        modText.forEach((value, index) => {
-            if (value.startsWith('//@modloader-priority')) {
-                priorityMods.push(index);
-            }
-        })
         this.logger.info(`Found ${mods.List().length} mods`);
-        for (let index of priorityMods) {
-            this.logger.info(`Loading prioritized mod ${modList[index]}`);
-            ModAPI.LoadMod(modList[index]);
-            modList.splice(index, 1);
-        }
         for (let i = 0; i < mods.List().length; i++) {
             let modName = mods.List()[i]
             let mod = mods.Get(modName)
