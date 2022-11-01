@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         './inject': './src/inject/main.ts',
         './background': './src/background.ts',
@@ -33,7 +33,6 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         library: "ModBox"
     },
-    devtool: 'inline-source-map',
     plugins: [
         // Expose BrowserFS, process, and Buffer globals.
         // NOTE: If you intend to use BrowserFS in a script tag, you do not need
