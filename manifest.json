@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "modboxV2",
+    "version": "2.0.1",
+    "description": "Version 2 of modbox.",
+    "icons": {},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://rmtrollbox.eu-gb.mybluemix.net/",
+                "*://trollbox.suspc.cf/",
+                "*://ducktrollbox.paperluigis.repl.co/",
+                "*://box.km.mk/",
+                "*://trollbox.party/",
+                "*://cyio.trollbox.party/"
+            ],
+            "js": ["./dist/content_script.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "./dist/background.js"
+    },
+    "action": {
+        "default_title": "Modbox v2",
+        "default_popup": "./dist/popup/index.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "web/dynamic_import.js", "dist/*", "web/strollbox.js"
+            ],
+            "matches": [ "https://*/*" ]
+        }
+    ]
+}

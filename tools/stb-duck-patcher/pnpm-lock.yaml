@@ -1,0 +1,15 @@
+lockfileVersion: 5.4
+
+specifiers:
+  uglify-js: ^3.17.3
+
+dependencies:
+  uglify-js: 3.17.3
+
+packages:
+
+  /uglify-js/3.17.3:
+    resolution: {integrity: sha512-JmMFDME3iufZnBpyKL+uS78LRiC+mK55zWfM5f/pWBJfpOttXAqYfdDGRukYhJuyRinvPVAtUhvy7rlDybNtFg==}
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    dev: false

@@ -1,0 +1,16 @@
+[
+    null, null, null, null, null, null, null, null, // get to the 9th mfer
+    // line 7
+    "tagName", "body", "props", "endTag", "opt",
+    // line 8-9
+    "endTag", "opt", "endTag", "endTag", "props", "props", "props", "opt", "props", "props",
+    "className", "opt", "className", "className",
+    // line 10
+    "partial",
+    // line 11
+    "key", "props", "Object", "props", "key", "props", "key", "partial", "markdown", "key", "markdown", "props", "key",
+    // line 12
+    "tagBegin", "tagName", "partial",
+    // line 13
+    "endTag", "tagBegin", "body", "tagName", "tagBegin",
+]
