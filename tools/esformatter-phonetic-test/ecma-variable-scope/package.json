@@ -1,0 +1,64 @@
+{
+  "name": "ecma-variable-scope",
+  "description": "AST utility to collect scope info for variables",
+  "version": "2.1.0",
+  "homepage": "https://github.com/twolfson/ecma-variable-scope",
+  "author": {
+    "name": "Todd Wolfson",
+    "email": "todd@twolfson.com",
+    "url": "http://twolfson.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twolfson/ecma-variable-scope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twolfson/ecma-variable-scope/issues"
+  },
+  "licenses": [
+    {
+      "type": "UNLICENSE",
+      "url": "https://github.com/twolfson/ecma-variable-scope/blob/master/UNLICENSE"
+    }
+  ],
+  "main": "lib/ecma-variable-scope",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test:lint": "grunt jshint",
+    "test:test": "mocha --harmony",
+    "test:cover": "node --harmony ./node_modules/.bin/istanbul cover _mocha",
+    "test:cover-verify": "./node_modules/.bin/istanbul check-coverage --statements 95 --functions 95 --branches 95 --lines 95",
+    "test": "npm run test:lint && npm run test:cover && npm run test:cover-verify",
+    "travis": "npm run test && cat coverage/lcov.info | coveralls"
+  },
+  "dependencies": {
+    "ecma-scopes": "~2.0.0",
+    "estraverse": "~1.7.0"
+  },
+  "devDependencies": {
+    "chai": "~1.9.2",
+    "coveralls": "~2.11.2",
+    "esprima-fb": "~7001.1.0-dev-harmony-fb",
+    "function-to-string": "~0.2.0",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.4.0",
+    "istanbul": "~0.3.2",
+    "mocha": "~2.0.1"
+  },
+  "keywords": [
+    "ecma",
+    "ecmascript",
+    "ast",
+    "scope",
+    "variables",
+    "variable",
+    "var",
+    "block",
+    "lexical",
+    "with"
+  ]
+}
