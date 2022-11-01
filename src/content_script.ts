@@ -1,6 +1,6 @@
 // hook our custom script
 // *if on strollbox
-if (location.origin === "https://trollbox.suspc.cf") {
+/*if (location.origin === "https://trollbox.suspc.cf") {
     //console.log('a')
     const targetNode = document;
 
@@ -27,7 +27,7 @@ if (location.origin === "https://trollbox.suspc.cf") {
     })
 
     observer.observe(targetNode, config);
-}
+}*/
 const s = document.createElement('script');
 s.src = chrome.runtime.getURL("/dist/inject.js");
 s.id = "modbox_script"

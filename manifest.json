@@ -21,7 +21,12 @@
     "permissions": [
         "activeTab",
         "storage",
-        "scripting"
+        "scripting",
+        "declarativeNetRequest",
+        "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+        "*://trollbox.suspc.cf/*"
     ],
     "background": {
         "service_worker": "./dist/background.js"
@@ -37,5 +42,14 @@
             ],
             "matches": [ "https://*/*" ]
         }
-    ]
+    ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "stb",
+                "enabled": true,
+                "path": "stb.json"
+            }
+        ]
+    }
 }

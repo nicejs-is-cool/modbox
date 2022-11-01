@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "redirect",
+            "redirect": {
+                "extensionPath": "/web/strollbox.js"
+            }
+        },
+        "condition": {
+            "urlFilter": "duck.js",
+            "domains": ["trollbox.suspc.cf"],
+            "resourceTypes": ["script"]
+        }
+    }
+]
