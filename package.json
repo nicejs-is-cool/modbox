@@ -15,7 +15,8 @@
     "pako": "^2.0.4"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --config ./webpack.dev.js",
+    "build:prod": "webpack --config ./webpack.prod.js"
   },
   "dependencies": {}
 }

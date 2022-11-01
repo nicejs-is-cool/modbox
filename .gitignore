@@ -2,3 +2,4 @@ node_modules/
 tools/unminifier/node_modules/
 yarn-error.log
 dist/
+private.pem
