@@ -165,7 +165,6 @@ if (commands[t].hidden) continue;
         forceNew: !0
     }), pseudo = localStorage.nick || "", color = localStorage.color || "", blocked = JSON.parse(localStorage.blocked || "[]"), warnTxt = "/!\\ Be careful, h...", exeScript = "outEval(atob(this.getAttribute('data-exe')));", scroll = !0, users = {}, rooms = {}, userhome = {}, typing = !1, typetimeout = -1, noFocusMsg = 0, noFocusPings = 0, title = "strollbox", disconMsgs = [];
 window.exportedEnv.socket = socket
-window.exportedEnv.users = new Proxy(users, {})
     function getPseudo() {
         var e;
         (e = prompt("nickname ?")) !== pseudo && (e ? pseudo = e : (null === pseudo && (pseudo = "anonymous"), 
@@ -434,5 +433,10 @@ window.exportedEnv.users = new Proxy(users, {})
     global.printRoom = printRoom, global.printNick = printNick, global.printMsg = printMsg, 
     global.sendMsg = sendMsg, global.socket = socket, global.users = users, global.rooms = rooms, 
     global.userhome = userhome;
-window.exportEnv.inContextEval = function(c) { return eval(c); }
+window.exportedEnv.inContextEval = function(c) { return eval(c); }
+window.exportedEnv.users = new Proxy(users, {
+    get(target, name) {
+        return users[name]
+    }
+})
 }(this);

@@ -16,11 +16,16 @@ susOut.splice(
 ) // commands
 susOut.splice(
     susOut.indexOf('        transports: [ "websocket", "polling" ],')+3,
-    0, "window.exportedEnv.socket = socket\nwindow.exportedEnv.users = new Proxy(users, {})"); // socket
+    0, "window.exportedEnv.socket = socket"); // socket
 
 susOut.splice(
     susOut.length-1,
-    0, "window.exportEnv.inContextEval = function(c) { return eval(c); }"); // unlock the keys to the mansion
+    0, `window.exportedEnv.inContextEval = function(c) { return eval(c); }
+window.exportedEnv.users = new Proxy(users, {
+    get(target, name) {
+        return users[name]
+    }
+})`); // unlock the keys to the mansion
 
 susOut.splice(
     susOut.indexOf('            for (var t in e.classList.add("helpcmd"), _commands) {')+1,

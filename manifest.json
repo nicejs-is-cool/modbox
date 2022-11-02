@@ -40,7 +40,7 @@
             "resources": [
                 "web/dynamic_import.js", "dist/*", "web/strollbox.js"
             ],
-            "matches": [ "https://*/*" ]
+            "matches": [ "*://*/*" ]
         }
     ],
     "declarative_net_request": {
