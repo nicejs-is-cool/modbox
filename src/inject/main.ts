@@ -6,7 +6,7 @@ import MountableFileSystem from 'browserfs/dist/node/backend/MountableFileSystem
 
 //export type HookWhere = "head" | "tail";
 export type HookWhen = "before" | "after";
-export type Allowed = "rmtrollbox" | "cyio" | "trollboxparty" | "boxkmk" | "ducktb"
+export type Allowed = "rmtrollbox" | "cyio" | "trollboxparty" | "boxkmk" | "ducktb" | "win93"
 export enum Websites {
     //rmtrollbox = "https://rmtrollbox.eu-gb.mybluemix.net",
     rmtrollbox = "https://sussite.tk",
@@ -16,7 +16,7 @@ export enum Websites {
     strollbox = "https://trollbox.suspc.cf",
     //ducktb = "https://ducktrollbox.paperluigis.repl.co",
     ducktb = "http://chat.auby.duckdns.org/",
-    trollbox = "https://www.windows93.net/trollbox/"
+    win93 = "https://www.windows93.net/"
 }
 export interface Dependency {
     modId: string;
