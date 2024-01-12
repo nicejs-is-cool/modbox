@@ -7,13 +7,16 @@ import MountableFileSystem from 'browserfs/dist/node/backend/MountableFileSystem
 //export type HookWhere = "head" | "tail";
 export type HookWhen = "before" | "after";
 export type Allowed = "rmtrollbox" | "cyio" | "trollboxparty" | "boxkmk" | "ducktb"
-export enum Trollboxes {
-    rmtrollbox = "https://rmtrollbox.eu-gb.mybluemix.net",
+export enum Websites {
+    //rmtrollbox = "https://rmtrollbox.eu-gb.mybluemix.net",
+    rmtrollbox = "https://sussite.tk",
     cyio = "https://cyio.trollbox.party",
     trollboxparty = "https://trollbox.party",
     boxkmk = "https://box.km.mk",
     strollbox = "https://trollbox.suspc.cf",
-    ducktb = "https://ducktrollbox.paperluigis.repl.co"
+    //ducktb = "https://ducktrollbox.paperluigis.repl.co",
+    ducktb = "http://chat.auby.duckdns.org/",
+    trollbox = "https://www.windows93.net/trollbox/"
 }
 export interface Dependency {
     modId: string;
@@ -25,7 +28,7 @@ export function Depends(modName: string, version?: string) {
         if (!constructor.prototype.depends) {
             constructor.prototype.depends = [];
         }
-        constructor.depends.push({modName, version})
+        constructor.prototype.depends.push({modName, version})
     }
 }
 export namespace SocketIO {
@@ -101,14 +104,16 @@ export async function Init() {
                     //@ts-ignore
                     amlConfig = JSON.parse(await fs.readFile("/config/aml", {encoding: 'utf-8'}));
                     //console.log(amlConfig)
-                    if (amlConfig.enabled) Mods.Get<AML>('aml').enable();
                     if (amlConfig.override) {
                         let modctmp = Mods.Load(
                             //@ts-ignore
                             eval(await fs.readFile(amlConfig.override, {encoding: 'utf-8'}))
                         )
                         Mods.Get<Mod>(modctmp.id).enable();
+                        return;
                     }
+                    if (amlConfig.enabled) Mods.Get<AML>('aml').enable();
+                    
                 })
             })
         })

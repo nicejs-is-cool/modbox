@@ -12,7 +12,8 @@
                 "*://ducktrollbox.paperluigis.repl.co/",
                 "*://box.km.mk/",
                 "*://trollbox.party/",
-                "*://cyio.trollbox.party/"
+                "*://cyio.trollbox.party/",
+                "*://chat.auby.duckdns.org/"
             ],
             "js": ["./dist/content_script.js"],
             "run_at": "document_start"

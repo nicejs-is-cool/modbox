@@ -44,3 +44,12 @@ export function mkdir(path: fs.PathLike, options: fs.MakeDirectoryOptions & { re
         })
     })
 }
+
+export function unlink(path: fs.PathLike): Promise<void> {
+    return new Promise((resolve, reject) => {
+        fs.unlink(path, (err) => {
+            if (err) return reject(err);
+            return resolve();
+        })
+    })
+}

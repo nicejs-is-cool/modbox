@@ -44,7 +44,7 @@ export default class AML implements Mod {
                 Mods.Load(modc);
                 Mods.Enable(modc.id);
             }
-            console.info('Phase 2: Load mods with dependencies')
+            console.info('Phase 2: Enable mods with dependencies')
             for (let mod of this.mods) {
                 if (mod.depends) {
                     let metDependencies = 0;

@@ -1,13 +1,17 @@
 declare namespace ModBox {
     export type HookWhere = "head" | "tail";
     export type HookWhen = "before" | "after";
-    export type Allowed = "rmtrollbox" | "cyio" | "trollboxparty" | "boxkmk"
-    export enum Trollboxes {
-        rmtrollbox = "https://rmtrollbox.eu-gb.mybluemix.net",
+    export type Allowed = "rmtrollbox" | "cyio" | "trollboxparty" | "boxkmk" | "ducktb"
+    export enum Websites {
+        //rmtrollbox = "https://rmtrollbox.eu-gb.mybluemix.net",
+        rmtrollbox = "https://sussite.tk",
         cyio = "https://cyio.trollbox.party",
         trollboxparty = "https://trollbox.party",
         boxkmk = "https://box.km.mk",
-        strollbox = "https://vent.suspc.cf"
+        strollbox = "https://trollbox.suspc.cf",
+        //ducktb = "https://ducktrollbox.paperluigis.repl.co",
+        ducktb = "http://chat.auby.duckdns.org/",
+        trollbox = "https://www.windows93.net/trollbox/"
     }
     export function Depends(modName: string, version?: string): (constructor: any) => void;
     export namespace SocketIO {

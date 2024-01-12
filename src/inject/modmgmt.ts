@@ -13,8 +13,12 @@ export default class ModManager {
         //const modc: ModBox.Mod = new mod();
         if (modc.allowed) {
             for(let a of modc.allowed) {
-                if (location.origin != ModBox.Trollboxes[a]) {
-                    throw new Error('Mod not allowed to load in this trollbox!')
+                if (a.match(/http(s?):\/\//)) {
+                    if (location.origin != a) throw new Error('Mod not allowed to load in this website!');
+                    
+                }
+                if (location.origin != ModBox.Websites[a] && !/http(s?):\/\//.test(a)) {
+                    throw new Error('Mod not allowed to load in this website!')
                 }
             }
         }
